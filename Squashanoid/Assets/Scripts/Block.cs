@@ -11,6 +11,7 @@ public class Block : MonoBehaviour
     private void Start()
     {
         level = FindObjectOfType<Level>();
+        level.OnBlockCreated();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
