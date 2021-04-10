@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    float redPigment = Random.Range(0f, 1f);
-    //    float greenPigment = Random.Range(0f, 1f);
-    //    float bluePigment = Random.Range(0f, 1f);
-    //    GetComponent<SpriteRenderer>().color = new Color(redPigment, greenPigment, bluePigment);
-    //}
+    [SerializeField] AudioClip destroySound;
+
+    Level level;
+
+    private void Start()
+    {
+        level = FindObjectOfType<Level>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioSource.PlayClipAtPoint(destroySound, Camera.main.transform.position);
+        level.OnBlockBroken();
         Destroy(gameObject);
     }
 }

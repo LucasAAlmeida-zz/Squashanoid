@@ -1796,6 +1796,10 @@ PrefabInstance:
       propertyPath: racket
       value: 
       objectReference: {fileID: 1053991047}
+    - target: {fileID: 5908776258816046551, guid: 0a3065523564eee4588f3e1fa72ef5fd, type: 3}
+      propertyPath: yLaunchVelocity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5908776258816046552, guid: 0a3065523564eee4588f3e1fa72ef5fd, type: 3}
       propertyPath: m_Name
       value: Ball
