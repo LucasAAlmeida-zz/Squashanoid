@@ -7,6 +7,6 @@ public class GameOverWindow : MonoBehaviour
 {
     public void OnRestartButtonClicked()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
     }
 }

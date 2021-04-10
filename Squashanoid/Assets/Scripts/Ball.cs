@@ -19,6 +19,12 @@ public class Ball : MonoBehaviour
         }
     }
 
+    private void LockRacketToBall()
+    {
+        Vector3 racketPosition = racket.transform.position;
+        float yOffset = 0.5f;
+        transform.position = new Vector2(racketPosition.x, racketPosition.y + yOffset);
+    }
     private void LaunchBallOnMouseClick()
     {
         if(Input.GetMouseButton(0)) {
@@ -27,10 +33,4 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void LockRacketToBall()
-    {
-        Vector3 racketPosition = racket.transform.position;
-        float yOffset = 0.5f;
-        transform.position = new Vector2(racketPosition.x, racketPosition.y + yOffset);
-    }
 }
