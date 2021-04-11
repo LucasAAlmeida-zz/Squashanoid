@@ -8,5 +8,6 @@ public class GameOverWindow : MonoBehaviour
     public void OnRestartButtonClicked()
     {
         SceneManager.LoadScene("Level1");
+        FindObjectOfType<Level>().ResetGame();
     }
 }

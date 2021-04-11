@@ -61,6 +61,11 @@ public class Level : MonoBehaviour
         scoreText.text = currentScore.ToString();
     }
 
+    public void ResetGame()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnDestroy()
     {
         if (Instance == this) {
