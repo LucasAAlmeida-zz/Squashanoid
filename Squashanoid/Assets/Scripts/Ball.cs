@@ -7,14 +7,19 @@ public class Ball : MonoBehaviour
     [SerializeField] Racket racket;
     [SerializeField] float xLaunchVelocity = 2f;
     [SerializeField] float yLaunchVelocity = 10f;
+    [SerializeField] float randomFactor = 0.2f;
+
     [SerializeField] AudioClip[] ballSounds;
+
     bool hasStarted = false;
 
     AudioSource ballAudioSource;
+    Rigidbody2D myRigidbody2D;
 
     private void Awake()
     {
         ballAudioSource = GetComponent<AudioSource>();
+        myRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -32,10 +37,11 @@ public class Ball : MonoBehaviour
         float yOffset = 0.5f;
         transform.position = new Vector2(racketPosition.x, racketPosition.y + yOffset);
     }
+
     private void LaunchBallOnMouseClick()
     {
         if(Input.GetMouseButton(0)) {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xLaunchVelocity, yLaunchVelocity);
+            myRigidbody2D.velocity = new Vector2(xLaunchVelocity, yLaunchVelocity);
             hasStarted = true;
         }
     }
@@ -43,10 +49,22 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (hasStarted) {
-            int clipIndex = Random.Range(0, ballSounds.Length);
-            AudioClip clip = ballSounds[clipIndex];
-            ballAudioSource.PlayOneShot(clip);
+            PlayCollisionSFX();
+            ApplyRandomForce();
         }
     }
 
+    private void PlayCollisionSFX()
+    {
+        int clipIndex = Random.Range(0, ballSounds.Length);
+        AudioClip clip = ballSounds[clipIndex];
+        ballAudioSource.PlayOneShot(clip);
+    }
+
+    private void ApplyRandomForce()
+    {
+        var randomForceX = Random.Range(-randomFactor, randomFactor);
+        var randomForceY = Random.Range(-randomFactor, randomFactor);
+        myRigidbody2D.velocity += new Vector2(randomForceX, randomForceY);
+    }
 }

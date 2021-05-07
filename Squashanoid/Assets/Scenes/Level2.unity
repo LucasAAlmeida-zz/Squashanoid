@@ -1735,17 +1735,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2848737776760021426, guid: 4aff2e2303b58964cb34d3a16545069e, type: 3}
   m_PrefabInstance: {fileID: 2056045398}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1053991047 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3044631864376841471, guid: bcdb5d955fbec4d4eb4686ab6d2e5f5f, type: 3}
-  m_PrefabInstance: {fileID: 382223503}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ecadc81ef7232c4dbb39963e0e30a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1071453485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2848737776760021426, guid: 4aff2e2303b58964cb34d3a16545069e, type: 3}
@@ -1906,14 +1895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5908776258816046551, guid: 0a3065523564eee4588f3e1fa72ef5fd, type: 3}
-      propertyPath: racket
-      value: 
-      objectReference: {fileID: 1053991047}
-    - target: {fileID: 5908776258816046551, guid: 0a3065523564eee4588f3e1fa72ef5fd, type: 3}
-      propertyPath: yLaunchVelocity
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5908776258816046552, guid: 0a3065523564eee4588f3e1fa72ef5fd, type: 3}
       propertyPath: m_Name
       value: Ball
