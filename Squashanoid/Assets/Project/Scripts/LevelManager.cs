@@ -48,7 +48,12 @@ public class LevelManager : MonoBehaviour
     {
         blocksCount--;
         if (blocksCount <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            var sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+            if (sceneBuildIndex < 2) {
+                SceneManager.LoadScene(sceneBuildIndex + 1);
+            } else {
+                SceneManager.LoadScene(0);
+            }
         }
         currentScore += pointsPerBlock;
         UpdateScoreText();

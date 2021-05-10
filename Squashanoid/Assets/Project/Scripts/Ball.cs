@@ -22,7 +22,6 @@ public class Ball : MonoBehaviour
         myRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!hasStarted) {
@@ -46,6 +45,7 @@ public class Ball : MonoBehaviour
         }
     }
 
+    #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (hasStarted) {
@@ -67,4 +67,5 @@ public class Ball : MonoBehaviour
         var randomForceY = Random.Range(-randomFactor, randomFactor);
         myRigidbody2D.velocity += new Vector2(randomForceX, randomForceY);
     }
+    #endregion
 }
